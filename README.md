@@ -74,3 +74,5 @@ A Website that helps tourists find,view and book their next trip and tour guide 
 *   Add places 
 
 ---
+
+Wireframe: https://www.figma.com/file/iQsCeuBy0sGbQGTpnQCXjh/Touravel---TUWAIQ-Python-Web-development-Bootcamp-Final-project?node-id=0%3A1
