@@ -21,3 +21,11 @@ def register_page(request: HttpRequest):
 def guide_register_page(request: HttpRequest):
 
     return render(request, "tour/guide_register.html")
+
+def contact_page(request: HttpRequest):
+
+    return render(request, "tour/contact.html")
+
+def about_page(request: HttpRequest):
+
+    return render(request, "tour/about.html")

@@ -2,8 +2,78 @@
 
 
 {% block content %}
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="https://cdn-icons-png.flaticon.com/512/7890/7890223.png"
+            class="img-fluid" alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <hr class="p-3">
+          <form>
+            <!-- First Name input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="form3Example3" class="form-control form-control-lg"
+                placeholder="Enter your First Name" />
+              <label class="form-label" for="form3Example3">First Name</label>
+            </div>
 
-Tourists guide register form will be shown here :D 
+            <!-- Last Name input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="form3Example3" class="form-control form-control-lg"
+                placeholder="Enter your Last Name" />
+              <label class="form-label" for="form3Example3">Last Name</label>
+            </div>
 
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="form3Example3" class="form-control form-control-lg"
+                placeholder="Enter a valid email address" />
+              <label class="form-label" for="form3Example3">Email address</label>
+            </div>
+  
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+              <input type="password" id="form3Example4" class="form-control form-control-lg"
+                placeholder="Enter password" />
+              <label class="form-label" for="form3Example4">Password</label>
+            </div>
+  
+  
+            <!-- phone number input -->
+            <div class="form-outline mb-3">
+              <input type="text" id="form3Example4" class="form-control form-control-lg"
+                placeholder="Enter your Phone number" />
+              <label class="form-label" for="form3Example4">Phone number</label>
+            </div>
+  
+  
+            <!-- national id input -->
+            <div class="form-outline mb-3">
+              <input type="text" id="form3Example4" class="form-control form-control-lg"
+                placeholder="Enter Your National ID" />
+              <label class="form-label" for="form3Example4">National ID</label>
+            </div>
+            
+            <!-- Profile pic input -->
+            <div class="form-outline mb-3">
+              <input type="file" id="form3Example4" class="form-control form-control-lg"
+                placeholder="Enter Your profile pictue" />
+              <label class="form-label" for="form3Example4">Profile pictue</label>
+            </div>
 
+            <hr>
+  
+            <div class="text-center text-lg-start mt-2 pt-2">
+              <button type="button" class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
+              <p class="small fw-bold mt-2 pt-1 mb-0">already have an account? <a href="{% url 'tourApp:login_page' %}"
+                  class="link-danger">Login</a></p>
+            </div>
+  
+          </form>
+        </div>
+      </div>
+    </div>
 {% endblock %}

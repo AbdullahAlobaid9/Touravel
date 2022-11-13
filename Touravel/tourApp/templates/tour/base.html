@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+            body{  
+              background: rgb(233,235,255);
+              background: linear-gradient(110deg, rgba(233,235,255,1) 48%, rgba(149,202,255,1) 88%);
+            }
             .carousel-img {
                 width: 100%;
                 height: 600px;
@@ -103,31 +107,32 @@
 
 
       <div class="container-fluid">
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-          <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        <header class="d-flex flex-wrap justify-content-center py-2 mb-4 border-bottom">
+          <a href="{% url 'tourApp:home_page' %}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <img src="https://cdn-icons-png.flaticon.com/512/826/826070.png"class="bi me-2 ms-5" width="36" height="32" >
+            <span class="fs-4">Touravel</span>
           </a>
     
           <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 text-white">
-            <li><a href="{% url 'tourApp:home_page' %}" class="nav-link px-2 link-dark">Home</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">Book a tour !</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">Recommendation</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">Contact us</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">About us</a></li>
-            <li><a href="{% url 'tourApp:guide_register_page' %}" class="nav-link px-2 link-dark">Sign up as Tourists guide</a></li>  
+            <li><a href="{% url 'tourApp:home_page' %}" class="nav-link px-5 link-dark">Home</a></li>
+            <li><a href="#" class="nav-link px-4 link-dark">Book a tour !</a></li>
+            <li><a href="#" class="nav-link px-4 link-dark">Recommendation</a></li>
+            <li><a href="{% url 'tourApp:contact_page' %}" class="nav-link px-4 link-dark">Contact us</a></li>
+            <li><a href="{% url 'tourApp:about_page' %}" class="nav-link px-4 link-dark">About us</a></li>
+            <li><a href="{% url 'tourApp:guide_register_page' %}" class="nav-link px-4 link-dark">Sign up as Tourists guide</a></li>  
           </ul>
           
           
           <div class="col-md-3 text-end">
-            <a class="btn btn-outline-info me-2" href="{% url 'tourApp:login_page' %}">Login</a>
-            <a class="btn btn-light me-2" href="{% url 'tourApp:register_page' %}">Register</a>
+            <a class="btn btn-outline-light me-2" href="{% url 'tourApp:login_page' %}">Login</a>
+            <a class="btn btn-outline-light me-2" href="{% url 'tourApp:register_page' %}">Register</a>
           </div>
         </header>
       </div>
 
       <!-- end of Header-->
 
-    <div class="container-fluid">
+    <div class="container">
         {% block content %}
         <div id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -178,21 +183,21 @@
               <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
       
               <h2 class="fw-normal">Place 1</h2>
-              <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+              <p>Brief about the first place and something to attract the visitor </p>
               <p><a class="btn btn-secondary" href="#">View details »</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
               <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
       
               <h2 class="fw-normal">Place2</h2>
-              <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+              <p>Brief about the second place and something to attract the visitor</p>
               <p><a class="btn btn-secondary" href="#">View details »</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
               <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
       
               <h2 class="fw-normal">Place3</h2>
-              <p>And lastly this, the third column of representative placeholder content.</p>
+              <p>Brief about the third place and something to attract the visitor</p>
               <p><a class="btn btn-secondary" href="#">View details »</a></p>
             </div><!-- /.col-lg-4 -->
           </div>
@@ -209,7 +214,8 @@
         </div>
         <!-- End of comment section -->
         <div>
-        <footer class="bg-light text-center text-white">
+          <hr class="text-light">
+        <footer class=" text-center text-white">
           <!-- Grid container -->
           <div class="container p-4 pb-0">
             <!-- Section: Social media -->
@@ -244,9 +250,9 @@
           <!-- Grid container -->
         
           <!-- Copyright -->
-          <div class="text-center p-3 text-black" style="background-color: rgba(255, 255, 255, 0.2);">
+          <div class="text-center p-2 text-black" >
             © 2023 Made by:
-            <a class="text-dark" href="http://github.com/abdullahalobaid9">Abdullah</a>
+            <a class="text-dark" href="http://github.com/abdullahalobaid9">Abdullah Alobaid</a>
           </div>
           <!-- Copyright -->
         </footer>
