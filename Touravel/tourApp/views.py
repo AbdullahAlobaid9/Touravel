@@ -9,7 +9,6 @@ def home_page(request : HttpRequest):
 
     return render(request, "tour/home_page.html")
 
-
 def login_page(request: HttpRequest):
 
     return render (request, "tour/login.html")

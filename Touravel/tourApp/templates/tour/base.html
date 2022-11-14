@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-            body{  
-              background: rgb(233,235,255);
-              background: linear-gradient(110deg, rgba(233,235,255,1) 48%, rgba(149,202,255,1) 88%);
+            body{
+                background: rgb(244,238,220);
+                background: linear-gradient(110deg, rgba(244,238,220,1) 25%, rgba(255,255,255,1) 55%, rgba(246,201,120,1) 75%); 
+
             }
             .carousel-img {
                 width: 100%;
@@ -119,16 +120,23 @@
             <li><a href="#" class="nav-link px-4 link-dark">Recommendation</a></li>
             <li><a href="{% url 'tourApp:contact_page' %}" class="nav-link px-4 link-dark">Contact us</a></li>
             <li><a href="{% url 'tourApp:about_page' %}" class="nav-link px-4 link-dark">About us</a></li>
-            <li><a href="{% url 'tourApp:guide_register_page' %}" class="nav-link px-4 link-dark">Sign up as Tourists guide</a></li>  
+            <li><a href="#" class="nav-link px-4 link-dark">Sign up as Tourists guide</a></li>  
           </ul>
-          
+          <!---->
           
           <div class="col-md-3 text-end">
-            <a class="btn btn-outline-light me-2" href="{% url 'tourApp:login_page' %}">Login</a>
-            <a class="btn btn-outline-light me-2" href="{% url 'tourApp:register_page' %}">Register</a>
+            {% if request.user.is_authenticated %}
+            <div class="d-flex flex-row mt-2">
+              <strong class="nav-link px-4 link-dark">Welcome {{ request.user.first_name }}</strong>
+              <a class="btn btn-outline-dark me-2" href="{% url 'accounts:logout_user' %}">Logout</a>
+            </div>
+            {% else %}
+            <a class="btn btn-outline-dark me-2" href="{% url 'accounts:login_user' %}">Login</a>
+            <a class="btn btn-outline-dark me-2" href="{% url 'accounts:register_user' %}">Register</a>
+            {% endif %}  
           </div>
         </header>
-      </div>
+      </div>  
 
       <!-- end of Header-->
 
@@ -142,27 +150,27 @@
             </div>
             <div class="carousel-inner mt-5">
               <div class="carousel-item active">
-                <img src="https://images.pexels.com/photos/2859169/pexels-photo-2859169.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="carousel-img opacity-75 " >
-                <div class="carousel-caption d-none d-md-block text-black text-sh ">
+                <img src="https://images.pexels.com/photos/2859169/pexels-photo-2859169.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="carousel-img opacity-50 " >
+                <div class="carousel-caption d-none d-md-block text-black  ">
                   <h5>Welcome to Touravel where you can easily choose you next trip !</h5>
                   <hr>
-                  <p><a class="btn btn-outline-light" href="#">Click here to Learn more about us</a></p>
+                  <p><a class="btn btn-outline-dark" href="#">Click here to Learn more about us</a></p>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="https://images.pexels.com/photos/8828439/pexels-photo-8828439.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="carousel-img opacity-75 " >
-                <div class="carousel-caption text-black text-sh ">
+                <img src="https://images.pexels.com/photos/8828439/pexels-photo-8828439.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="carousel-img opacity-50 " >
+                <div class="carousel-caption text-black  ">
                   <h5>Plan your next trip with a click of a button</h5>
                   <hr>
-                  <p><a class="btn btn-outline-light" href="#">book a tour now!</a></p>
+                  <p><a class="btn btn-outline-dark" href="#">book a tour now!</a></p>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="https://images.pexels.com/photos/691637/pexels-photo-691637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="carousel-img opacity-75 " >
-                <div class="carousel-caption d-none d-md-block text-black text-sh">
+                <img src="https://images.pexels.com/photos/691637/pexels-photo-691637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="carousel-img opacity-50 " >
+                <div class="carousel-caption d-none d-md-block text-black ">
                   <h5>Join us now and become a Tourists guide ! </h5>
                   <hr>
-                  <p><a class="btn btn-outline-light" href="#"> Join now !</a></p>
+                  <p><a class="btn btn-outline-dark" href="#"> Join now !</a></p>
                 </div>
               </div>
             </div>
