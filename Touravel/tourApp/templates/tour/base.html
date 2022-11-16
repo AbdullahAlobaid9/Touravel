@@ -9,18 +9,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
             body{
-                background: rgb(244,238,220);
-                background: linear-gradient(110deg, rgba(244,238,220,1) 25%, rgba(255,255,255,1) 55%, rgba(246,201,120,1) 75%); 
-
+              background: rgb(244,238,220);
+              background: linear-gradient(110deg, rgba(244,238,220,1) 25%, rgba(255,255,255,1) 53%, rgba(246,201,120,1) 75%); 
             }
-            .carousel-img {
-                width: 100%;
-                height: 600px;
-                border-radius: 15px;
-                object-fit: cover;
+
+            .img-float-left{
+              float: left;    
+              margin: 0 15px 0 0;
+            }
+            .spacing{
+              min-height: 100vh;
+            }
+          .carousel-img {
+            width: 100%;
+            height: 600px;
+            border-radius: 15px;
+            object-fit: cover;
             }
             .text-sh{
-                text-shadow:5px 5px 10px white;
+              text-shadow:5px 5px 10px white;
             }
             .credits {
               display: flex;
@@ -40,21 +47,14 @@
               font-weight: bold;
               text-decoration: none;
             }
-
-            .dribbble {
-              width: 20px;
-              height: 20px;
-              margin: 0 5px;
-            }
-            body{margin-top:20px;}
-
+            
             .comment-wrapper .panel-body {
-                max-height:650px;
-                overflow:auto;
+              max-height:650px;
+              overflow:auto;
             }
-
+            
             .comment-wrapper .media-list .media img {
-                width:64px;
+              width:64px;
                 height:64px;
                 border:2px solid #e5e7e8;
             }
@@ -63,14 +63,246 @@
                 border-bottom:1px dashed #efefef;
                 margin-bottom:25px;
             }
+            
+
+              .padding {
+                  padding: 3rem !important
+              }
+
+              .user-card-full {
+                  overflow: hidden;
+              }
+
+              .card {
+                  border-radius: 5px;
+                  -webkit-box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
+                  box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
+                  border: none;
+                  margin-bottom: 30px;
+              }
+
+              .m-r-0 {
+                  margin-right: 0px;
+              }
+
+              .m-l-0 {
+                  margin-left: 0px;
+              }
+
+              .user-card-full .user-profile {
+                  border-radius: 5px 0 0 5px;
+              }
+
+              .bg-c-lite-green {
+                      
+                  background: linear-gradient(to right, #e7eba4, #f29263);
+              }
+
+              .user-profile {
+                  padding: 20px 0;
+              }
+
+              .card-block {
+                  padding: 1.25rem;
+              }
+
+              .m-b-25 {
+                  margin-bottom: 25px;
+              }
+
+              .img-radius {
+                  border-radius: 5px;
+              }
+
+
+              
+              h6 {
+                  font-size: 14px;
+              }
+
+              .card .card-block p {
+                  line-height: 25px;
+              }
+
+              @media only screen and (min-width: 1400px){
+              p {
+                  font-size: 14px;
+              }
+              }
+
+              .card-block {
+                  padding: 1.25rem;
+              }
+
+              .b-b-default {
+                  border-bottom: 1px solid #e0e0e0;
+              }
+
+              .m-b-20 {
+                  margin-bottom: 20px;
+              }
+
+              .p-b-5 {
+                  padding-bottom: 5px !important;
+              }
+
+              .card .card-block p {
+                  line-height: 25px;
+              }
+
+              .m-b-10 {
+                  margin-bottom: 10px;
+              }
+
+              .text-muted {
+                  color: #919aa3 !important;
+              }
+
+              .b-b-default {
+                  border-bottom: 1px solid #e0e0e0;
+              }
+
+              .f-w-600 {
+                  font-weight: 600;
+              }
+
+              .m-b-20 {
+                  margin-bottom: 20px;
+              }
+
+              .m-t-40 {
+                  margin-top: 20px;
+              }
+
+              .p-b-5 {
+                  padding-bottom: 5px !important;
+              }
+
+              .m-b-10 {
+                  margin-bottom: 10px;
+              }
+
+              .m-t-40 {
+                  margin-top: 20px;
+              }
+
+              .user-card-full .social-link li {
+                  display: inline-block;
+              }
+
+              .user-card-full .social-link li a {
+                  font-size: 20px;
+                  margin: 0 10px 0 0;
+                  -webkit-transition: all 0.3s ease-in-out;
+                  transition: all 0.3s ease-in-out;
+              }
+              .styled-table {
+                  border-collapse: collapse;
+                  margin: 25px 0;
+                  font-size: 0.9em;
+                  font-family: sans-serif;
+                  min-width: 400px;
+                  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+              
+                }
+                .styled-table thead tr {
+                  background-color: #f9efb6;
+                  color: #000000;
+                  text-align: left;
+              }
+
+                .styled-table th,
+                .styled-table td {
+                      padding: 20px 80px;
+                  }
+                  .styled-table tbody tr {
+                      border-bottom: 1px solid #fff9d6;
+                      background-color: #ffffff;
+                  }
+
+                  .styled-table tbody tr.active-row {
+                  font-weight: bold;
+                  color: #ffffff;
+                    }
+
+
+
+
+
+
+             
+              .cards-list {
+                z-index: 0;
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+              }
+
+              .card {
+                margin: 30px auto;
+                width: 300px;
+                height: 300px;
+                border-radius: 40px;
+              box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+                cursor: pointer;
+                transition: 0.4s;
+              }
+
+              .card .card_image {
+                width: inherit;
+                height: inherit;
+                border-radius: 40px;
+              }
+
+              .card .card_image img {
+                width: inherit;
+                height: inherit;
+                border-radius: 40px;
+                object-fit: cover;
+              }
+
+              .card .card_title {
+                text-align: center;
+                border-radius: 0px 0px 40px 40px;
+                font-family: sans-serif;
+                font-weight: bold;
+                font-size: 30px;
+                margin-top: -80px;
+                height: 40px;
+              }
+
+              .card:hover {
+                transform: scale(0.9, 0.9);
+                box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+                  -5px -5px 30px 15px rgba(0,0,0,0.22);
+              }
+
+              .title-white {
+                color: white;
+              }
+
+              .title-black {
+                color: black;
+              }
+
+              @media all and (max-width: 500px) {
+                .card-list {
+                  /* On small screens, we are no longer using row direction but column */
+                  flex-direction: column;
+                }
+              }
+
+
+
     </style>
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="bootstrap" viewBox="0 0 118 94">
-          <title>Bootstrap</title>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
-        </symbol>
+      <symbol id="bootstrap" viewBox="0 0 118 94">
+        <title>Bootstrap</title>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+      </symbol>
         <symbol id="home" viewBox="0 0 16 16">
           <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"></path>
         </symbol>
@@ -106,8 +338,7 @@
       </svg>
       <!--- End of SVGs-->
 
-
-      <div class="container-fluid">
+      <div class="container-fluid ">
         <header class="d-flex flex-wrap justify-content-center py-2 mb-4 border-bottom">
           <a href="{% url 'tourApp:home_page' %}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <img src="https://cdn-icons-png.flaticon.com/512/826/826070.png"class="bi me-2 ms-5" width="36" height="32" >
@@ -115,19 +346,23 @@
           </a>
     
           <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 text-white">
-            <li><a href="{% url 'tourApp:home_page' %}" class="nav-link px-5 link-dark">Home</a></li>
-            <li><a href="#" class="nav-link px-4 link-dark">Book a tour !</a></li>
+            <li><a href="{% url 'tourApp:home_page' %}" class="nav-link  link-dark">Home</a></li>
+            <li><a href="{% url 'tourApp:book_tour' %}" class="nav-link px-4 link-dark">Book a tour !</a></li>
             <li><a href="#" class="nav-link px-4 link-dark">Recommendation</a></li>
             <li><a href="{% url 'tourApp:contact_page' %}" class="nav-link px-4 link-dark">Contact us</a></li>
             <li><a href="{% url 'tourApp:about_page' %}" class="nav-link px-4 link-dark">About us</a></li>
-            <li><a href="#" class="nav-link px-4 link-dark">Sign up as Tourists guide</a></li>  
+            {% if request.user.is_authenticated %}
+            <li><strong class="nav-link px-4 link-dark">Welcome {{ request.user.first_name }}</strong></li>
+            <li><a href="{% url 'tourApp:guide_profile' %}" class="nav-link px-4 link-dark">Guide Profile</a></li>
+            {% else %}
+            <li><a href="{% url 'accounts:guide_register' %}" class="nav-link px-4 link-dark">Sign up as Tourists guide</a></li>  
+            {% endif %}  
           </ul>
           <!---->
           
           <div class="col-md-3 text-end">
             {% if request.user.is_authenticated %}
-            <div class="d-flex flex-row mt-2">
-              <strong class="nav-link px-4 link-dark">Welcome {{ request.user.first_name }}</strong>
+            <div class="d-flex flex-row  px-4 nav-link">
               <a class="btn btn-outline-dark me-2" href="{% url 'accounts:logout_user' %}">Logout</a>
             </div>
             {% else %}
@@ -140,7 +375,7 @@
 
       <!-- end of Header-->
 
-    <div class="container">
+    <div class="container spacing">
         {% block content %}
         <div id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -185,47 +420,46 @@
           </div>
 
           <!--first carousel for slideshow-->
-          <div class="container mt-5">
-          <div class="row">
-            <div class="col-lg-4">
-              <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-      
-              <h2 class="fw-normal">Place 1</h2>
-              <p>Brief about the first place and something to attract the visitor </p>
-              <p><a class="btn btn-secondary" href="#">View details »</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-              <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-      
-              <h2 class="fw-normal">Place2</h2>
-              <p>Brief about the second place and something to attract the visitor</p>
-              <p><a class="btn btn-secondary" href="#">View details »</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-              <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-      
-              <h2 class="fw-normal">Place3</h2>
-              <p>Brief about the third place and something to attract the visitor</p>
-              <p><a class="btn btn-secondary" href="#">View details »</a></p>
-            </div><!-- /.col-lg-4 -->
-          </div>
+          <div class="cards-list">
+  
+            <div class="card 1">
+              <div class="card_image"> <img src="https://i.ytimg.com/vi/7ys5nycrQIw/maxresdefault.jpg" /> </div>
+              <div class="card_title title-white">
+                <p><a class="title-white" href="http://127.0.0.1:8000/place/detail/14/">Winter Wonderland in Riyadh</a></p>
+              </div>
+            </div>
+            
+              <div class="card 2">
+              <div class="card_image">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/7f/e1/d8/the-world-s-largest-mirrored.jpg?w=1000&h=-1&s=1" />
+                </div>
+              <div class="card_title title-white">
+                <p><a class=" title-white" href="http://127.0.0.1:8000/place/detail/15/">Maraya in Al'Ula</a></p>
+              </div>
+            </div>
+            
+            <div class="card 3">
+              <div class="card_image">
+                <img src="https://www.aleqt.com/sites/default/files/styles/scale_660/public/a/743216_259525.jpg?itok=VXdGYuy_" />
+              </div>
+              <div class="card_title title-white">
+                <p><a class="title-white" href="http://127.0.0.1:8000/place/detail/13/"> Al Samra mountain in Ha'il</a></p>
+              </div>
+            </div>
+            </div>
+          {% endblock %}   
         </div>
-    </div>
-         {% endblock %}
-         
+        </div>
+        
+    
         <!--End of content -->
         
-        <div class="container-fluid p-3">
-        {% block comment %}
-
-        {% endblock %}
-        </div>
-        <!-- End of comment section -->
-        <div>
-          <hr class="text-light">
-        <footer class=" text-center text-white">
-          <!-- Grid container -->
-          <div class="container p-4 pb-0">
+        
+        <div class="container-fluid">
+          <hr class="text-dark">
+          <footer class="text-center text-white">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
             <!-- Section: Social media -->
             <section class="mb-4">
               <!-- Twitter -->

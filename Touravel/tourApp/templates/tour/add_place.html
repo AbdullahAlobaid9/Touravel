@@ -1,0 +1,40 @@
+{% extends 'tour/base.html' %}
+
+
+{% block content %}
+
+<h1 class="text-center">Add new place </h1><div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://cdn-icons-png.flaticon.com/512/3754/3754187.png"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="form-outline mb-3">
+        <label class="form-label">place name </label>
+        <input type="text" name="place_name" class="form-control form-control-lg">
+    </div>
+
+    <label  class="form-label">place Image</label>
+    <input type="file" name="image" accept="image/*" class="form-control form-control-lg" />
+
+    <div class="mb-3">
+        <label  class="form-label">Description</label>
+        <textarea type="text" class="form-control" name="description" class="form-control form-control-lg"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-lable">Available Cities:</label>
+        <select class="form-control" name="city">
+            {% for choice in place.city_type_choices.choices %}
+            <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <input class="btn btn-primary" type="submit" value="Add place" />
+  </form>
+</div>
+  {% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'tour/base.html'%}
+
+
+{% block content %}
+<h1 class="text-center">{{ place.place_name }}</h1>
+
+<div class="container text-center">
+    <p>{{ place.place_name }}  is in {{ place.city }} </p>
+    <img src="{{ place.image.url}}" class=" carousel-img">
+</div>
+<hr>
+<div class="text-center">
+ About <strong>{{place.place_name}}</strong> <hr>  <br> {{ place.description}}
+</div>
+
+<hr>
+
+<div class="container">
+    <h2 class="text-center">Reviews</h2>
+
+    {% for review in reviews %}
+        <div class="border rounded p-3 mt-3">
+            <h5>{{ review.name }}</h5>
+            <p>{{ review.content}}</p>
+            <span> {{ review.created_at}}</span>
+        </div>
+    {% endfor %}
+</div>
+<hr>
+
+<form action="{% url 'tourApp:add_review' place.id %}" method="POST">
+    {% csrf_token %}
+    <label class="form-label">Your name:</label>
+    <input type="text" name="name" class="form-control" />
+
+    <label class="form-label">Your Review:</label>
+    <textarea name="content" class="form-control"></textarea>
+
+    <input type="submit" class="btn btn-primary mt-2" value="New Review" />
+</form>
+
+{% endblock %}

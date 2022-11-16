@@ -2,41 +2,49 @@
 
 
 {% block content %}
-<section class="vh-100">
-    <div class="container-fluid h-custom">
+<section class="vh-full">
+    <div class="container-fluid ">
       <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-md-9 col-lg-6 col-xl-5">
+        <div class="col-md-10 col-lg-6 col-xl-5">
           <img src="https://cdn-icons-png.flaticon.com/512/7890/7890223.png"
             class="img-fluid" alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
             <hr class="p-3">
+          <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <!-- Username input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="form3Example3" class="form-control form-control-lg"
+                placeholder="Enter your UserName" name="username" />
+              <label class="form-label" for="form3Example3">username</label>
+            </div>
           <form>
             <!-- First Name input -->
             <div class="form-outline mb-4">
               <input type="text" id="form3Example3" class="form-control form-control-lg"
-                placeholder="Enter your First Name" />
+                placeholder="Enter your First Name" name="first_name" />
               <label class="form-label" for="form3Example3">First Name</label>
             </div>
 
             <!-- Last Name input -->
             <div class="form-outline mb-4">
               <input type="text" id="form3Example3" class="form-control form-control-lg"
-                placeholder="Enter your Last Name" />
+                placeholder="Enter your Last Name" name="last_name"/>
               <label class="form-label" for="form3Example3">Last Name</label>
             </div>
 
             <!-- Email input -->
             <div class="form-outline mb-4">
               <input type="email" id="form3Example3" class="form-control form-control-lg"
-                placeholder="Enter a valid email address" />
+                placeholder="Enter a valid email address" name="email"/>
               <label class="form-label" for="form3Example3">Email address</label>
             </div>
   
             <!-- Password input -->
             <div class="form-outline mb-3">
               <input type="password" id="form3Example4" class="form-control form-control-lg"
-                placeholder="Enter password" />
+                placeholder="Enter password" name="password" />
               <label class="form-label" for="form3Example4">Password</label>
             </div>
   
@@ -44,7 +52,7 @@
             <!-- phone number input -->
             <div class="form-outline mb-3">
               <input type="text" id="form3Example4" class="form-control form-control-lg"
-                placeholder="Enter your Phone number" />
+                placeholder="Enter your Phone number" name="phone_number" />
               <label class="form-label" for="form3Example4">Phone number</label>
             </div>
   
@@ -52,26 +60,25 @@
             <!-- national id input -->
             <div class="form-outline mb-3">
               <input type="text" id="form3Example4" class="form-control form-control-lg"
-                placeholder="Enter Your National ID" />
+                placeholder="Enter Your National ID" name="national_id"/>
               <label class="form-label" for="form3Example4">National ID</label>
             </div>
             
             <!-- Profile pic input -->
             <div class="form-outline mb-3">
               <input type="file" id="form3Example4" class="form-control form-control-lg"
-                placeholder="Enter Your profile pictue" />
+                placeholder="Enter Your profile pictue" name="profile_picture" accept="image/*" />
               <label class="form-label" for="form3Example4">Profile pictue</label>
             </div>
 
             <hr>
   
             <div class="text-center text-lg-start mt-2 pt-2">
-              <button type="button" class="btn btn-primary btn-lg"
+              <button type="submit" class="btn btn-primary btn-lg"
               style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
-              <p class="small fw-bold mt-2 pt-1 mb-0">already have an account? <a href="{% url 'tourApp:login_page' %}"
+              <p class="small fw-bold mt-2 pt-1 mb-0">already have an account? <a href="{% url 'accounts:login_user' %}"
                   class="link-danger">Login</a></p>
             </div>
-  
           </form>
         </div>
       </div>

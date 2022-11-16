@@ -1,0 +1,46 @@
+{% extends 'tour/base.html' %}
+
+
+{% block content %}
+
+<h1 class="text-center">Current available Places </h1>
+
+<div class="container ">
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th scope="col">Place name</th>
+            <th scope="col">About the place</th>
+            <th scope="col">City</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for place in places %}
+            <tr>
+                <th scope="row"><a href="{% url 'tourApp:place_detail' place.id %}">{{ place.place_name }}</a></th>
+                <td>{{ place.description }}</td>
+                <td>{{ place.city }}</td>
+                <td>
+
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Edit
+                        </button>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Update</a></li>
+                        <li><a class="dropdown-item" href="{% url 'tourApp:delete_place' place.id %}">Delete</a></li>
+                        </ul>
+                      </div>
+
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+
+
+{% endblock %} 

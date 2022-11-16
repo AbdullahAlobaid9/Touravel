@@ -1,0 +1,44 @@
+{% extends 'tour/base.html' %} 
+
+
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center">Current available cities </h1>
+    <div></div>
+          <div class="cards-list">
+  
+            <div class="card 1">
+              <div class="card_image"> <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Riyadh_Skyline.jpg" /> </div>
+              <div class="card_title title-white">
+                <p>Riyadh</p>
+              </div>
+            </div>
+            
+              <div class="card 2">
+              <div class="card_image">
+                <img src="https://www.telegraph.co.uk/content/dam/eip/alula/alula-desert-region-main-tomb-of-lihyan.jpg?imwidth=680" />
+                </div>
+              <div class="card_title title-white">
+                <p>Al'Ula</p>
+              </div>
+            </div>
+            
+            <div class="card 3">
+              <div class="card_image">
+                <img src="https://www.aleqt.com/sites/default/files/styles/scale_660/public/a/743216_259525.jpg?itok=VXdGYuy_" />
+              </div>
+              <div class="card_title title-white">
+                <p>Ha'il</p>
+              </div>
+            </div>
+            </div>
+        </div>
+
+        
+        <div class="container text-center">
+            <h2>Add a place from here </h2>
+            <a class="btn btn-outline-dark me-2" href="{% url 'tourApp:add_place' %}">Add</a>
+
+        </div>
+{% endblock %}
