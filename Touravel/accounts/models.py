@@ -8,3 +8,6 @@ class GuideProfile(models.Model):
     profile_picture = models.ImageField(upload_to="images/")
     national_id = models.IntegerField()
     phone_number = models.IntegerField()
+
+    def __str__(self) -> str:
+        return f"{self.user}, {self.national_id}"

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
-from .models import Place, Review
+from .models import Place, Review, Reservation
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
@@ -12,18 +12,6 @@ def home_page(request : HttpRequest):
 
     return render(request, "tour/home_page.html")
 
-def login_page(request: HttpRequest):
-
-    return render (request, "tour/login.html")
-
-def register_page(request: HttpRequest):
-
-    return render(request, "tour/register.html")
-
-def guide_register_page(request: HttpRequest):
-
-    return render(request, "tour/guide_register.html")
-
 def contact_page(request: HttpRequest):
 
     return render(request, "tour/contact.html")
@@ -32,9 +20,19 @@ def about_page(request: HttpRequest):
 
     return render(request, "tour/about.html")
 
+def reserved_page(request: HttpRequest):
 
-def guide_profile(request: HttpRequest):
-    
+    return render(request, "tour/reserved.html")
+
+
+def user_profile(request: HttpRequest):
+    user: User = request.user
+
+    if not ( user.is_authenticated and user.has_perm("tourApp.add_place")):
+        print("tourist")
+        return render(request, "tour/tourist_profile.html")
+
+
     return render(request, "tour/guide_profile.html")
 
 def book_tour(request:HttpRequest):
@@ -46,7 +44,7 @@ def book_tour(request:HttpRequest):
 def add_place(request: HttpRequest):
     user: User = request.user
 
-    if not ( user.is_authenticated ) :
+    if not ( user.is_authenticated and user.has_perm("tourApp.add_place")) :
         return redirect("accounts:login_user")
     
     if request.method == "POST":
@@ -57,7 +55,10 @@ def add_place(request: HttpRequest):
 
 def view_places(request: HttpRequest):
 
-    places = Place.objects.all()
+    if "search" in request.GET:
+        places = Place.objects.filter(city__contains=request.GET["search"])
+    else:
+        places = Place.objects.all()
 
     return render(request, "tour/view_places.html", {"places": places})
 
@@ -70,7 +71,7 @@ def place_detail(request:HttpRequest, place_id: int):
     except:
         return render(request, "tour/not_found.html")
 
-    return render(request, "tour/place_detail.html", {"place": place, "review": reviews})
+    return render(request, "tour/place_detail.html", {"place": place, "reviews": reviews})
 
 
 def add_review(request: HttpRequest, place_id : int):
@@ -82,8 +83,31 @@ def add_review(request: HttpRequest, place_id : int):
 
     return redirect("tourApp:place_detail", place.id)
 
+def reserve(request: HttpRequest, place_id:int):
+    user: User = request.user
+    place = Place.objects.get(id = place_id)
+
+
+    if not user.is_authenticated :
+        return redirect("accounts:login_user")
+
+    if request.method == "POST":
+        new_reserve = Reservation(user = user,place = place)
+        new_reserve.save()
+
+        print(new_reserve)
+        print("test")
+
+        return redirect("tourApp:reserved_page")
+
+
+
 def delete_place(request: HttpRequest, place_id):
-    
+    user: User = request.user
+
+    if not ( user.is_authenticated and user.has_perm("tourApp.add_place")) :
+        return redirect("accounts:login_user")
+
     try:
         place = Place.objects.get(id = place_id)
     except:
@@ -92,6 +116,33 @@ def delete_place(request: HttpRequest, place_id):
     place.delete()
 
     return redirect("tourApp:view_places")
+
+
+def update_place(request: HttpRequest, place_id:int):
+    user: User = request.user
+
+    if not ( user.is_authenticated and user.has_perm("tourApp.add_place")) :
+        return redirect("accounts:login_user")
+
+    try:
+        place = Place.objects.get(id=place_id)
+    except:
+        return render(request, "tour/not_found.html")
+
+    if request.method == "POST":
+        place.place_name = request.POST["place_name"]
+        place.description = request.POST["description"]
+        place.image = request.FILES["image"]
+        place.city = request.POST["city"]
+
+        place.save()
+
+        return redirect("tourApp:view_places")
+    
+    return render(request, "tour/update_place.html", {"place": place})
+
+
+
 
 
 

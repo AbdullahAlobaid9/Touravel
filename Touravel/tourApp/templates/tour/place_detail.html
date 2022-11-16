@@ -21,6 +21,7 @@
     {% for review in reviews %}
         <div class="border rounded p-3 mt-3">
             <h5>{{ review.name }}</h5>
+            <hr>
             <p>{{ review.content}}</p>
             <span> {{ review.created_at}}</span>
         </div>
@@ -36,7 +37,21 @@
     <label class="form-label">Your Review:</label>
     <textarea name="content" class="form-control"></textarea>
 
-    <input type="submit" class="btn btn-primary mt-2" value="New Review" />
+    <input type="submit" class="btn btn-dark mt-2" value="New Review" />
 </form>
 
+<hr>
+ 
+<div id="wrapper">
+<form action="{% url 'tourApp:reserve_page' place.id %}" method="POST">
+    {% csrf_token %}
+    <label>{{request.user.first_name}}, Would you like to book for this place ?</label>
+
+  <input type="submit" class="btn btn-dark" value="Book now"/>
+ </form>
+</div>
+
+
 {% endblock %}
+
+
