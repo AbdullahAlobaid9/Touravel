@@ -28,12 +28,16 @@ def reserved_page(request: HttpRequest):
 def user_profile(request: HttpRequest):
     user: User = request.user
 
+
+    reservatios = Reservation.objects.filter(user = user)
+    print(reservatios)
     if not ( user.is_authenticated and user.has_perm("tourApp.add_place")):
         print("tourist")
-        return render(request, "tour/tourist_profile.html")
+        return render(request, "tour/tourist_profile.html", {"reservations": reservatios})
 
 
-    return render(request, "tour/guide_profile.html")
+
+    return render(request, "tour/guide_profile.html", {"reservations": reservatios})
 
 def book_tour(request:HttpRequest):
 
@@ -94,9 +98,6 @@ def reserve(request: HttpRequest, place_id:int):
     if request.method == "POST":
         new_reserve = Reservation(user = user,place = place)
         new_reserve.save()
-
-        print(new_reserve)
-        print("test")
 
         return redirect("tourApp:reserved_page")
 

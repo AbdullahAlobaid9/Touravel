@@ -37,10 +37,10 @@
             </div>
             </div>
         </div>
-
+        {% if user.is_superuser %}
         <div class="container text-center">
             <h2>Add a place from here </h2>
             <a class="btn btn-outline-dark me-2" href="{% url 'tourApp:add_place' %}">Add</a>
-
+          {% endif %}
         </div>
 {% endblock %}

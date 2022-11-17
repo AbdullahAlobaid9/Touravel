@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class GuideProfile(models.Model):
     user = models.OneToOneField(User, on_delete= models.CASCADE, primary_key=True)
-    profile_picture = models.ImageField(upload_to="images/")
+    profile_picture = models.ImageField(upload_to="images/", default="images/tourist.png")
     national_id = models.IntegerField()
     phone_number = models.IntegerField()
 

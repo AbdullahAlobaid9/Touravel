@@ -31,7 +31,7 @@
                 <td>{{ place.description }}</td>
                 <td>{{ place.city }}</td>
                 <td>
-
+                    {% if user.is_superuser %}
                     <div class="dropdown">
                         <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Edit
@@ -41,7 +41,7 @@
                         <li><a class="dropdown-item" href="{% url 'tourApp:delete_place' place.id %}">Delete</a></li>
                         </ul>
                       </div>
-
+                      {% endif %}
                 </td>
             </tr>
             {% endfor %}

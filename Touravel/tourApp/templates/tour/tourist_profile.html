@@ -145,9 +145,13 @@ p {
                         </div>
                         <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Places {{request.user.first_name}} booked for  </h6>
                         <div class="row">
+                            
                             <div class="col-sm-6">
-                                <p class="m-b-10 f-w-600">City</p>
-                                <h6 class="text-muted f-w-400">place name</h6>
+                
+                                {% for reserve in reservations %}
+                                    {{reserve.place}}
+
+                                    {% endfor %}
                             </div>
                             
                         </div>
